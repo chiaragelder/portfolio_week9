@@ -12,18 +12,18 @@ body {
     }
     /* */
     .dark-mode body {
-    background-color: #060624;
+    background-color: #080817;
     color: #ebf4f1;
     }
     .dark-mode .backcolor{
-        background-color: #080825;
+        background-color: #040414;
     }
     .dark-mode .el-drawer {
         background-color: #020027;
       }
     /* */
     .gray-mode body {
-    background-color: rgba(112, 128, 144, 0.98);
+    background-color: rgba(153, 159, 171, 0.98);
     color: #251603ef;
     }
     .gray-mode .backcolor{
@@ -32,7 +32,6 @@ body {
         color: #FFFFFF;
     }
     /*
-    {
     .gray-mode .el-drawer {
         background-color: #183ea5fa;
         color: #FFFFFF;
@@ -79,9 +78,8 @@ body {
 
     /* In je <style> sectie */
 .text-crimson {
-    color:rgb(203, 20, 57)
+    color: crimson;
   }
-
 
     
       

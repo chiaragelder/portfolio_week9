@@ -83,6 +83,68 @@ onMounted(async () => {
 });
 </script>
 
+<template>
+  <div>
+    <!-- Loading state -->
+    <div v-if="isLoading" class="flex items-center justify-center h-screen">
+      <p>Loading...</p>
+    </div>
+
+    <!-- Error state -->
+    <div v-else-if="hasError" class="flex items-center justify-center h-screen">
+      <p>Error loading settings. Please try again later.</p>
+    </div>
+
+    <!-- Main content -->
+    <div v-else class="h-screen relative">
+      <!-- Background container -->
+      <div class="relative h-full">
+        <!-- Background image -->
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          :style="{ backgroundImage: homepageSettings?.thumbnail ? `url(${homepageSettings.thumbnail})` : '' }"
+        ></div>
+
+        <!-- Black overlay for opacity -->
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+
+        <!-- Content above the background -->
+        <div class="relative z-10 pr-5">
+          <Drawer />
+        </div>
+
+        <!-- Info section with typewriter effect -->
+        <div class="info flex flex-col items-center justify-center h-screen relative">
+          <div class="container text-left p-1 lg:p-20">
+            <div
+              class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-white"
+            >
+              <!-- Title -->
+              <div class="relative">
+                <div class="blur-text text-6xl font-bold ">{{ displayedTitle }}</div>
+                <div class="text-6xl font-bold border-r-4 border-white pr-2 animate-blink text-white">
+                  {{ displayedTitle }}
+                </div>
+              </div>
+
+              <!-- Subtitle -->
+              <div class="relative mt-4">
+                <div class="blur-text text-4xl font-semibold">{{ displayedSubtitle }}</div>
+                <div class="text-2xl font-semibold">{{ displayedSubtitle }}</div>
+              </div>
+
+              <!-- Copyright -->
+              <div class="relative mt-4">
+                <div class="blur-text font-light">{{ displayedCopyright }}</div>
+                <div class="font-light">{{ displayedCopyright }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 
 <style>
@@ -115,9 +177,4 @@ onMounted(async () => {
  .text-white{
   color: rgb(255, 255, 255);
  }
-
- .text-crimson{
-  color: crimson;
- }
-
 </style>
