@@ -117,20 +117,20 @@ onMounted(async () => {
         <div class="info flex flex-col items-center justify-center h-screen relative">
           <div class="container text-left p-1 lg:p-20">
             <div
-              class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-white"
+              class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-crimson"
             >
               <!-- Title -->
               <div class="relative">
-                <div class="blur-text text-6xl font-bold ">{{ displayedTitle }}</div>
-                <div class="text-6xl font-bold border-r-4 border-white pr-2 animate-blink text-white">
+                <div class="blur-text text-title font-bold">{{ displayedTitle }}</div>
+                <div class="text-title font-bold border-r-4 border-white pr-2 animate-blink text-crimson">
                   {{ displayedTitle }}
                 </div>
               </div>
 
               <!-- Subtitle -->
               <div class="relative mt-4">
-                <div class="blur-text text-4xl font-semibold">{{ displayedSubtitle }}</div>
-                <div class="text-2xl font-semibold">{{ displayedSubtitle }}</div>
+                <div class="blur-text text-subtitle font-semibold">{{ displayedSubtitle }}</div>
+                <div class="text-subtitle font-semibold">{{ displayedSubtitle }}</div>
               </div>
 
               <!-- Copyright -->
@@ -171,10 +171,45 @@ onMounted(async () => {
   filter: blur(8px); /* Apply Gaussian blur */
   z-index: -1; /* Ensure it's below the main text */
 }
-</style>
 
-<style> 
- .text-white{
-  color: rgb(255, 255, 255);
- }
+/* Dynamically adjustable title size */
+.text-title {
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Dynamic text size */
+}
+
+.text-subtitle {
+  font-size: clamp(1.5rem, 4vw, 3rem); /* Dynamic text size for subtitle */
+}
+
+/* Adjust text size for smaller screens */
+@media (max-width: 768px) {
+  .text-title {
+    font-size: 3rem; /* Specific size for small screens */
+  }
+
+  .text-subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .text-title {
+    font-size: 3.5rem;
+  }
+
+  .text-subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .text-title {
+    font-size: 4rem; /* Larger text for desktops */
+  }
+
+  .text-subtitle {
+    font-size: 3rem;
+  }
+}
+
 </style>
