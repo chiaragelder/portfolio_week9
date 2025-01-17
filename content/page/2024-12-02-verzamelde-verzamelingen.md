@@ -2,7 +2,8 @@
 layout: default
 title: Verzamelde verzamelingen
 tags:
-  - Tag 1
+  - illustrator
+  - photography
 imagegallery:
   showgallery: true
   carouselgrid: grid

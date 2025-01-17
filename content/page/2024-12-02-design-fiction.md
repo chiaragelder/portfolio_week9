@@ -3,6 +3,7 @@ layout: default
 title: Design fiction
 tags:
   - instruction design
+  - illustrator
 imagegallery:
   showgallery: true
   carouselgrid: grid

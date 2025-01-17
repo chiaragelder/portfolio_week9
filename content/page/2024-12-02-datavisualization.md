@@ -3,6 +3,8 @@ layout: default
 title: Datavisualisation
 tags:
   - datavisualization
+  - indesign
+  - illustrator
 imagegallery:
   showgallery: true
   carouselgrid: grid

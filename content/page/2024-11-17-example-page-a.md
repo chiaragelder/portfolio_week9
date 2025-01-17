@@ -3,6 +3,7 @@ layout: default
 title: "Onderkruipsels "
 tags:
   - typography
+  - indesign
 imagegallery:
   showgallery: true
   carouselgrid: grid

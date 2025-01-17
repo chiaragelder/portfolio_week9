@@ -9,13 +9,24 @@
       <!-- Main content -->
       <div> 
         <!-- Text content container -->
-        <div class="text-container flex items-start">
+        <div class="text-container flex flex-col lg:flex-row items-start">
           <!-- Titel aan de linkerkant -->
-          <h1 class="text-3xl md:text-3xl lg:text-6xl lg:mb-10 font-bold mr-8 max-w-2xl">{{ data.title }}</h1>
-          
+          <h1 class="text-3xl md:text-3xl lg:text-6xl font-bold text-crimson lg:mb-10 mr-8 max-w-2xl">{{ data.title }}</h1>
+           
+          <!-- Tags als knoppen tussen titel en body tekst -->
+          <div class="tags-buttons mb-8">
+            <NuxtLink 
+              v-for="(tag, index) in data.tags" 
+              :key="index" 
+              :to="`/tags/${tag}`" 
+              class="tag-button">
+              {{ tag }}
+            </NuxtLink>
+          </div>
+
           <!-- Rest van de tekst -->
           <div class="text-content">
-            <p class="text-lg md:text-2xl lg:text-xl pb-10 font-bold">{{ data.description }}</p>
+            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800">{{ data.description }}</p>
             <ContentRenderer :value="data" />
           </div>
         </div>
@@ -59,42 +70,74 @@
 <style>
 /* Styling for the text container */
 .text-container {
-  max-width: 1200px; /* Verhoog de maximale breedte van de tekst */
-  margin: 0 auto; /* Centreer de container */
-  padding: 16px; /* Voeg padding toe rond de tekst */
-  margin-left: 100px; /* Dit voegt extra ruimte aan de linkerzijde toe */
-  display: flex; /* Gebruik flexbox om de titel en tekst naast elkaar te plaatsen */
-  align-items: flex-start; /* Zorg ervoor dat de titel en tekst aan de bovenkant worden uitgelijnd */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Flexbox voor titel en tekst naast elkaar */
+/* Flexbox voor titel en tekst naast elkaar op grotere schermen */
 .text-container h1 {
-  margin-top: 0; /* Verwijder de margin-top om de titel naar boven te krijgen */
-  margin-right: 10px; /* Zorg ervoor dat er ruimte is tussen de titel en de tekst */
-  flex: 0 0 auto; /* Zorg ervoor dat de titel niet uitrekt */
+  margin-top: 0;
+  margin-right: 10px;
+  flex: 0 0 auto;
+  color: crimson;
+  margin-left: 12px;
+}
+
+/* Tags knoppen */
+.tags-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px; /* Ruimte tussen tags en body tekst */
+  margin-left: 10px;
+}
+
+.tag-button {
+  background-color: #3d3b44; /* Rode achtergrond voor de knoppen */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none; /* Verwijder onderlijning */
+  transition: background-color 0.3s;
+}
+
+.tag-button:hover {
+  background-color: rgb(173, 18, 49); /* Donkerder rood bij hover */
 }
 
 /* Rest van de tekst container */
 .text-content {
-  padding-left: 10px; /* Voeg ruimte toe aan de linkerzijde van de tekst */
-  flex-grow: 1; /* Laat de tekstcontainer de beschikbare ruimte opvullen */
+  padding-left: 0px;
+  flex-grow: 1;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+  margin-top: 20px;
+  max-width: 75ch;  /* Limiteert de lengte van de tekst per regel tot ongeveer 75 tekens */
+  word-wrap: break-word;  /* Zorgt ervoor dat de tekst goed wordt afgebroken als dat nodig is */
 }
 
-/* Aanpassen van de styling voor de tekst */
-.text-3xl {
-  font-family: "Epilogue", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: crimson;
-  font-size: 50pt;
+/* Styling voor beschrijving */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
 }
 </style>
 
 <script setup>
 defineProps(['data', 'formatDate']);
 </script>
-
-
-
-  

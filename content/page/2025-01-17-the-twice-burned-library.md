@@ -3,6 +3,8 @@ layout: default
 title: The twice-burned library
 tags:
   - typography
+  - photography
+  - indesign
 imagegallery:
   showgallery: true
   carouselgrid: grid
