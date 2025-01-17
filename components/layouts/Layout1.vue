@@ -117,7 +117,7 @@
 .text-content {
   padding-left: 0px;
   flex-grow: 1;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   line-height: 1.6;
   margin-top: 20px;
   max-width: 75ch;  /* Limiteert de lengte van de tekst per regel tot ongeveer 75 tekens */

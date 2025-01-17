@@ -9,6 +9,7 @@ body {
     }
     .light-mode .el-drawer {
         background-color: #ffffff;
+        
     }
     /* */
     .dark-mode body {

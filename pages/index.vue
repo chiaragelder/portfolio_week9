@@ -117,19 +117,19 @@ onMounted(async () => {
         <div class="info flex flex-col items-center justify-center h-screen relative">
           <div class="container text-left p-1 lg:p-20">
             <div
-              class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-white"
+              class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-crimson"
             >
               <!-- Title -->
               <div class="relative">
                 <div class="blur-text text-6xl font-bold ">{{ displayedTitle }}</div>
-                <div class="text-6xl font-bold border-r-4 border-white pr-2 animate-blink text-white">
+                <div class="text-6xl font-bold border-r-4 border-white pr-2 animate-blink text-crimson">
                   {{ displayedTitle }}
                 </div>
               </div>
 
               <!-- Subtitle -->
               <div class="relative mt-4">
-                <div class="blur-text text-4xl font-semibold">{{ displayedSubtitle }}</div>
+                <div class="blur-text text-4xl font-semibold text-crimson">{{ displayedSubtitle }}</div>
                 <div class="text-2xl font-semibold">{{ displayedSubtitle }}</div>
               </div>
 
@@ -177,4 +177,9 @@ onMounted(async () => {
  .text-white{
   color: rgb(255, 255, 255);
  }
+
+ /* Crimson kleur specifiek voor titels */
+.text-crimson {
+  color: crimson; /* Zet de tekstkleur naar crimson */
+}
 </style>
