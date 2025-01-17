@@ -171,45 +171,15 @@ onMounted(async () => {
   filter: blur(8px); /* Apply Gaussian blur */
   z-index: -1; /* Ensure it's below the main text */
 }
+</style>
 
-/* Dynamically adjustable title size */
-.text-title {
-  font-size: clamp(2.5rem, 6vw, 4rem); /* Dynamic text size */
-}
+<style> 
+ .text-white{
+  color: rgb(255, 255, 255);
+ }
 
-.text-subtitle {
-  font-size: clamp(1.5rem, 4vw, 3rem); /* Dynamic text size for subtitle */
-}
-
-/* Adjust text size for smaller screens */
-@media (max-width: 768px) {
-  .text-title {
-    font-size: 3rem; /* Specific size for small screens */
-  }
-
-  .text-subtitle {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .text-title {
-    font-size: 3.5rem;
-  }
-
-  .text-subtitle {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 1025px) {
-  .text-title {
-    font-size: 4rem; /* Larger text for desktops */
-  }
-
-  .text-subtitle {
-    font-size: 3rem;
-  }
-}
+ .text-crimson{
+  color: crimson;
+ }
 
 </style>

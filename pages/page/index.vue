@@ -52,9 +52,6 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.text-xl {
-
-}
 </style>
 
 
