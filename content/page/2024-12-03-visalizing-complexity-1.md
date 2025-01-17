@@ -2,7 +2,7 @@
 layout: default
 title: Visualizing complexity
 tags:
-  - Tag 1
+  - datavisualization
 imagegallery:
   showgallery: true
   carouselgrid: grid

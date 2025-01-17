@@ -188,14 +188,5 @@ const updateTagCounts = async () => {
   height: auto; /* Adjust height to content */
 }
 
-.light-mode el-option {
-  background-color: #e2e3e5;
-  color: #161717;
-}
-
-.dark-mode body {
-  background-color: #161715;
-  color: #ebf4f1;
-}
 
 </style>

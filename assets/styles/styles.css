@@ -3,18 +3,19 @@
     min-height:100vh;
 }
 .container{
-    max-width: 80ch;
+    max-width: 100ch;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 16px;
+    padding: 8px;
 }
 
 
 p{
-    margin-top: 0.5em;
-    margin-right: 0.5em;
-    margin-left: 0.10em;
+    margin-top: 0.25em;
+    margin-right: 0em;
+    margin-left: 0.90em;
+    margin-bottom: 0.9em;
 }
 hr{
     border-bottom: 1px solid #ccc;
@@ -42,6 +43,18 @@ ul, li {
     display: block; /* Verwijder inline marges */
   }
   
+  .title-container {
+    padding: 10rem; /* Verhoog de padding rondom de titel */
+    text-align: center; /* Centreer de tekst */
+    background-color: rgba(0, 0, 0, 0.6); /* Voeg een semi-transparante achtergrond toe */
+    border-radius: 8px; /* Ronde hoeken */
+    margin-bottom: 1rem; /* Voeg extra ruimte onder de container toe */
+  }
+
+  .homepage-crimson{
+    color:crimson;
+
+}
 
 
   

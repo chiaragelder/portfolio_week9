@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <div class="container">
+    <div class="">
       <div v-if="post.folder !== 'page'">
         <FolderContent v-if="post.folder" :title="post.title" />
       </div>

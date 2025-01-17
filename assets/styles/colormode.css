@@ -5,10 +5,10 @@ body {
     }
     .light-mode body {
     background-color: #e4e4e4;
-    color: #030613;
+    color: #06062f;
     }
-    .licht-mode .el-drawer {
-        background-color: rgba(154, 104, 104, 0.99);
+    .light-mode .el-drawer {
+        background-color: #ffffff;
     }
     /* */
     .dark-mode body {
@@ -42,6 +42,7 @@ body {
         color: rgba(255, 45, 45, 0.8);
     }
     
+    
     /* Active link */
     .router-link-active {
     border-bottom: 1px solid rgba(50, 64, 63, 0.2);
@@ -74,6 +75,11 @@ body {
     .gray-mode select {
     border: 1px solid rgb(41, 41, 45);
     } 
+
+    /* In je <style> sectie */
+.text-crimson {
+    color: crimson;
+  }
 
     
       

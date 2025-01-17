@@ -175,6 +175,6 @@ onMounted(async () => {
 
 <style> 
  .text-white{
-  color: crimson;
+  color: rgb(255, 255, 255);
  }
 </style>

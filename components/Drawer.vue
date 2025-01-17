@@ -24,10 +24,9 @@
       <div class="flex-1 overflow-auto">
         <Navigations />
       </div>
-
       <!-- Footer is placed at the bottom of the drawer -->
       <div class="mt-auto footer">
-        <Footer />
+        <Footer/>
         <UtilNav />
       </div>
     </div>
@@ -39,16 +38,52 @@
   color: crimson;
   font-family: "Epilogue", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 600;
   font-style: normal;
+  background-color: #020027;
 }
+
+.el-collapse, 
+.el-collapse-item {
+  background-color: #020027; /* Dit is dezelfde kleur als de drawer */
+  font-size: xx-large;
+  
+}
+
+/* Zorg ervoor dat de items geen wit vlak krijgen */
+.el-collapse-item__content {
+  background-color: #020027; /* Zelfde als de drawer */
+}
+
+/* Voor de actieve staat van het accordeon-item */
+.el-collapse-item.is-active .el-collapse-item__content {
+  background-color: #020027; /* Zorg ervoor dat de achtergrondkleur blijft als het item open is */
+}
+
+.el-collapse-item__header {
+  background-color: #020027;
+  border-bottom: #020027;
+}
+
+b{
+  color: crimson;
+  font-size: 30pt;
+  font-weight: 800;
+
+}
+
+
+
 </style>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { DrawerProps } from 'element-plus'
 const drawer = ref(false)
-const direction = ref<DrawerProps['direction']>('ltr')
+const direction = ref<DrawerProps['direction']>('rtl')
+
+// For controlling the active state of the collapse
+const activeNames = ref(['1'])  // Default open the "My Work" section
 </script>
 
 <style>
@@ -59,7 +94,7 @@ const direction = ref<DrawerProps['direction']>('ltr')
   right: 0;
   bottom: 0;
   z-index: 1000; /* Ensures it appears on top */
-  background-color: rgba(255, 255, 255, 0.99);
+  background-color: rgba(220, 20, 60);
 }
 
 .flex-row {
@@ -75,3 +110,17 @@ const direction = ref<DrawerProps['direction']>('ltr')
   margin-top: auto;
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
