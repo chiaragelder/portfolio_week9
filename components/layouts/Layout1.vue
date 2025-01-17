@@ -15,7 +15,6 @@
            
           <!-- Tags als knoppen tussen titel en body tekst -->
           <div class="tags-buttons mb-8">
-            <!-- NuxtLink in plaats van button voor tag navigatie -->
             <NuxtLink 
               v-for="(tag, index) in data.tags" 
               :key="index" 
@@ -121,6 +120,8 @@
   color: rgb(255, 255, 255);
   line-height: 1.6;
   margin-top: 20px;
+  max-width: 75ch;  /* Limiteert de lengte van de tekst per regel tot ongeveer 75 tekens */
+  word-wrap: break-word;  /* Zorgt ervoor dat de tekst goed wordt afgebroken als dat nodig is */
 }
 
 /* Styling voor beschrijving */

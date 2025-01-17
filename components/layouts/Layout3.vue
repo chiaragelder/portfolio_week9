@@ -23,7 +23,7 @@
         >
           <div class="p-4 text-center">
             <!-- Responsieve tekst -->
-            <h1 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold mb-6 mijn-tekst">{{ data.title }}</h1>
+            <h1 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold mb-6 ">{{ data.title }}</h1>
             <h1 v-if="data.subtitle" class="text-white opacity-80 pt-3 text-lg md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
             <p v-if="data.author" class="text-white opacity-80 text-sm md:text-base lg:text-lg font-bold mb-2">{{ data.author }}</p>
             <p class="text-white text-xs opacity-50 hover:opacity-100">Last update: {{ formatDate(data.date) }}</p>
@@ -135,6 +135,7 @@ defineProps(['data', 'formatDate']);
 
 .mijn-tekst {
   line-height: 1.3 ; /* Stelt de interlinie in op 1.8 keer de lettergrootte */
+  color: crimson;
 }
 
 </style>
