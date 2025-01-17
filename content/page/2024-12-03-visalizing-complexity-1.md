@@ -3,6 +3,8 @@ layout: default
 title: Visualizing complexity
 tags:
   - datavisualization
+  - indesign
+  - "illustrator "
 imagegallery:
   showgallery: true
   carouselgrid: grid

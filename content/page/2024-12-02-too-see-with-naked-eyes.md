@@ -2,7 +2,8 @@
 layout: default
 title: Too see with naked eyes*
 tags:
-  - Tag 1
+  - manual/painting
+  - indesign
 imagegallery:
   showgallery: true
   carouselgrid: grid

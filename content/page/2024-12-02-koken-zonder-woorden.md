@@ -3,6 +3,8 @@ layout: default
 title: Koken zonder woorden
 tags:
   - instruction design
+  - "illustrator "
+  - indesign
 imagegallery:
   showgallery: true
   carouselgrid: grid

@@ -47,26 +47,33 @@ onMounted(async () => {
     }
     generalSettings.value = await settingsResponse.json();
 
-    if (homepageSettings.value.homepageredirect == "") {
+    
+
+    if (homepageSettings.value.homepageredirect ==""){
+      // console.log('no')
       // Start typewriter effect when general settings are loaded
-      animateTypewriter(generalSettings.value.site_title || "", displayedTitle, () => {
-        animateTypewriter(generalSettings.value.site_subtitle || "", displayedSubtitle, () => {
-          const copyrightText = generalSettings.value.copyright;
-          animateTypewriter(copyrightText, displayedCopyright);
-        });
+    animateTypewriter(generalSettings.value.site_title || "", displayedTitle, () => {
+      animateTypewriter(generalSettings.value.site_subtitle || "", displayedSubtitle, () => {
+        const copyrightText = (generalSettings.value.copyright);
+        animateTypewriter(copyrightText, displayedCopyright);
       });
-    } else {
+    });
+    }
+    else {
+      // console.log('yes')
       // Redirect if homepageredirect is set
       if (homepageSettings.value.homepageredirect) {
-        const redirectPath = homepageSettings.value.homepageredirect
-          ? `/page/${homepageSettings.value.homepageredirect}`
-          : null;
+          const redirectPath = homepageSettings.value.homepageredirect
+            ? `/page/${homepageSettings.value.homepageredirect}`
+            : null;
 
-        if (redirectPath) {
-          router.push(redirectPath);
+          if (redirectPath) {
+            router.push(redirectPath);
+          }
         }
-      }
     }
+
+   
 
     isLoading.value = false; // Stop loading when both files are fetched
   } catch (error) {
@@ -76,96 +83,9 @@ onMounted(async () => {
 });
 </script>
 
-<template>
-  <div>
-    <!-- Loading state -->
-    <div v-if="isLoading" class="flex items-center justify-center h-screen">
-      <p>Loading...</p>
-    </div>
 
-    <!-- Error state -->
-    <div v-else-if="hasError" class="flex items-center justify-center h-screen">
-      <p>Error loading settings. Please try again later.</p>
-    </div>
-
-    <!-- Main content -->
-    <div v-else class="h-screen relative">
-      <!-- Background container -->
-      <div class="relative h-full">
-        <!-- Background image -->
-        <div
-          class="absolute inset-0 bg-cover bg-center"
-          :style="{ backgroundImage: homepageSettings?.thumbnail ? `url(${homepageSettings.thumbnail})` : '' }"
-        ></div>
-
-        <!-- Black overlay for opacity -->
-        <div class="absolute inset-0 bg-black opacity-30"></div>
-
-        <!-- Content above the background -->
-        <div class="relative z-10 pr-5">
-          <Drawer />
-        </div>
-
-        <!-- Info section with typewriter effect -->
-        <div class="info flex flex-col items-center justify-center h-screen relative">
-          <div class="container text-left p-1 lg:p-20">
-            <div class="container opacity-80 animate-fade animate-once animate-delay-[100ms] text-crimson">
-              <!-- Title -->
-              <div class="relative">
-                <div class="blur-text text-title font-bold">{{ displayedTitle }}</div>
-                <div class="text-title font-bold border-r-4 border-white pr-2 animate-blink">
-                  {{ displayedTitle }}
-                </div>
-              </div>
-
-              <!-- Subtitle -->
-              <div class="relative mt-4">
-                <div class="blur-text text-subtitle font-semibold">{{ displayedSubtitle }}</div>
-                <div class="text-subtitle font-semibold">{{ displayedSubtitle }}</div>
-              </div>
-
-              <!-- Copyright -->
-              <div class="relative mt-4">
-                <div class="blur-text font-light">{{ displayedCopyright }}</div>
-                <div class="font-light">{{ displayedCopyright }}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
 
 <style>
-/* Title styling */
-.text-title {
-  font-size: 3.5rem; /* Grote tekst voor titel */
-  font-weight: bold;
-  line-height: 1.2;
-  color: crimson;
-  text-transform: uppercase;
-}
-
-/* Subtitle styling */
-.text-subtitle {
-  font-size: 1.5rem; /* Kleiner dan de titel */
-  font-weight: 600;
-  line-height: 1.4;
-  color: crimson;
-}
-
-/* Blurred text styling */
-.blur-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.4;
-  filter: blur(6px);
-  z-index: -1;
-}
-
-/* Animations */
 @keyframes blink {
   0%, 100% {
     border-color: transparent;
@@ -178,4 +98,26 @@ onMounted(async () => {
 .animate-blink {
   animation: blink 0.7s step-end infinite;
 }
+
+/* Blurred text styling */
+.blur-text {
+  position: absolute; /* Place the blurred text behind the original */
+  top: 0;
+  left: 0;
+  color: black; /* Black text for contrast */
+  opacity: 0.4; /* Adjust for a subtle blur */
+  filter: blur(8px); /* Apply Gaussian blur */
+  z-index: -1; /* Ensure it's below the main text */
+}
+</style>
+
+<style> 
+ .text-white{
+  color: rgb(255, 255, 255);
+ }
+
+ .text-crimson{
+  color: crimson;
+ }
+
 </style>
