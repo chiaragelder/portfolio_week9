@@ -24,4 +24,6 @@ layoutpage: layout3
 description: ""
 promoted: 5
 ---
-*This is an assignment for Inge's studio. We have been tasked with creating a catalog for the Onderkruipsels exhibition that was shown a few months ago at the Rijksmuseum. We have received texts about the exhibition that must be included in the catalog. Additionally, imagery is very important, and we have the freedom to choose images ourselves from the Rijksmuseum's collection. The challenge will lie in combining text, images, and structure. The medium and layout of the catalog are completely open; the only restriction is that we cannot use DIN formats. With this in mind, I started working on the project*
+*This is an assignment for Inge's studio. We have been tasked with creating a catalog for the Onderkruipsels exhibition that was shown a few months ago at the Rijksmuseum. We have received texts about the exhibition that must be included in the catalog. Additionally, imagery is very important, and we have the freedom to choose images ourselves from the Rijksmuseum's collection. The challenge will lie in combining text, images, and structure. The medium and layout of the catalog are completely open; the only restriction is that we cannot use DIN formats. With this in mind, I started working on the project.*
+
+D﻿o you want to see more of my typography/ indesign work? click below!

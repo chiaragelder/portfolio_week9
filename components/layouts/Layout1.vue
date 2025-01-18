@@ -38,16 +38,12 @@
           </div>
         </div>
 
-        <!-- Metadata and tags -->
-        <div class="text-xs leading-3 container">
-          <hr />
-          <p class="text-xs opacity-50 hover:opacity-100 pb-5">Last update: {{ formatDate(data.date) }}</p>
-          <article v-if="data.tags" class="tags">
-            <li v-for="(item, index) in data.tags" :key="index" class="pt-2 text-xs opacity-50 hover:opacity-100">
-              <NuxtLink :to="`/tags/${item}`">{{ item }}</NuxtLink>
-            </li>
-          </article>
-        </div>
+        <!-- Metadata and divider -->
+        <!-- Metadata and divider -->
+          <div class="text-xs leading-3 mt-8 pl-8 pr-8">
+            <hr />
+            <p class="text-xs opacity-50 hover:opacity-100 pb-2">Last update: {{ formatDate(data.date) }}</p>
+          </div>
       </div>
 
       <!-- Share Buttons -->
@@ -117,11 +113,31 @@
 .text-content {
   padding-left: 0px;
   flex-grow: 1;
-  color: rgb(0, 0, 0);
+
   line-height: 1.6;
   margin-top: 20px;
   max-width: 75ch;  /* Limiteert de lengte van de tekst per regel tot ongeveer 75 tekens */
   word-wrap: break-word;  /* Zorgt ervoor dat de tekst goed wordt afgebroken als dat nodig is */
+}
+
+/* Divider and Last Update */
+.metadata-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.divider {
+  width: 100%; /* Volledige breedte */
+  border: 0;
+  border-top: 1px solid #ccc; /* Lichtgrijze lijn */
+  margin: 10px 0;
+}
+
+.last-update {
+  font-size: 0.75rem; /* Kleinere tekst */
+  color: rgba(0, 0, 0, 0.5); /* Grijstint */
+  margin-left: 0; /* Links uitgelijnd */
+  margin-top: 8px;
 }
 
 /* Styling voor beschrijving */
