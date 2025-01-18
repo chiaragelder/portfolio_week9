@@ -8,9 +8,9 @@ imagegallery:
   showgallery: true
   carouselgrid: grid
   galleryImages:
-    - /img/scherm­afbeelding-2024-11-21-om-17.19.38.png
     - /img/scherm­afbeelding-2024-11-21-om-17.21.51.png
     - /img/scherm­afbeelding-2024-11-21-om-17.20.48.png
+    - /img/scherm­afbeelding-2024-11-21-om-17.19.38.png
 thumbnail: /img/scherm­afbeelding-2024-12-02-om-09.46.27.png
 date: 2024-12-02T08:59:15.474Z
 numbernavigation: 1

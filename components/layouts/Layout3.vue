@@ -24,7 +24,7 @@
             <h1 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold mb-6 ">{{ data.title }}</h1>
             <h1 v-if="data.subtitle" class="text-white opacity-80 pt-3 text-lg md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
             <p v-if="data.author" class="text-white opacity-80 text-sm md:text-base lg:text-lg font-bold mb-2">{{ data.author }}</p>
-            <p class="text-white text-xs opacity-50 hover:opacity-100">Last update: {{ formatDate(data.date) }}</p>
+            <!--<p class="text-white text-xs opacity-50 hover:opacity-100">Last update: {{ formatDate(data.date) }}</p>-->
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="max-w-full mx-auto opacity-80 bg-cover px-6 md:px-12 lg:px-16 mt-8">
+        <div class="max-w-full mx-auto opacity-80 bg-cover px-6 md:px-12 lg:px-16 mt-20">
           <div v-if="data.imagegallery && data.imagegallery.showgallery == true">
             <ImageGallery /> 
           </div>
@@ -67,11 +67,14 @@
           <RelatedPages :relatedPages="data.related_page" />
         </div>
 
-        <!-- Keep only the divider and last updated info -->
-        <div class="text-xs leading-3 mt-8">
-          <hr />
-          <p class="text-xs opacity-50 hover:opacity-100 pb-2">Last update: {{ formatDate(data.date) }}</p>
+               <!-- Footer Section -->
+      <div class="text-center mt-40">
+        <hr />
+        <div class="mt-4">
+          <p class="text-lg text-2xl font-semibold text-black">Contact Me!</p>
+          <p class="text-sm text-gray-600 text-black">chiaragelder@gmail.com</p>
         </div>
+      </div>
       </div>
 
       <ShareButtons />
@@ -109,5 +112,9 @@ defineProps(['data', 'formatDate']);
 
 .tag-button:hover {
   background-color: rgb(173, 18, 49); /* Darker background on hover */
+}
+
+.text-blackw{
+  color:black
 }
 </style>

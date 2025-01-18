@@ -10,6 +10,8 @@ imagegallery:
   carouselgrid: grid
   galleryImages:
     - /img/scherm­afbeelding-2024-12-02-om-10.08.30.png
+    - /img/scherm­afbeelding-2025-01-18-om-12.49.35.png
+    - /img/scherm­afbeelding-2025-01-18-om-12.51.00.png
 thumbnail: /img/scherm­afbeelding-2024-12-02-om-10.09.40.png
 date: 2024-12-02T09:07:03.418Z
 layoutpage: layout1
