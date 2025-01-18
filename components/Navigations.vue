@@ -1,6 +1,5 @@
 <template>
   <div class="opacity-80 animate-fade animate-once animate-delay-[10ms] pt-5">
-
     <div v-if="navigations.mainmenu.mainavigation_on_off">
       <div class="animate-fade animate-once animate-delay-[150ms]">
         <div v-show="navigations.mainmenu?.mainavigation_on_off">
@@ -9,7 +8,11 @@
 
             <!-- Dropdown -->
             <el-collapse v-model="activePanels" accordion class="custom-collapse">
-              <el-collapse-item title="Works" name="1" class="custom-collapse-item works-nav" >
+              <el-collapse-item
+                title="Works"
+                name="1"
+                class="custom-collapse-item works-nav"
+              >
                 <MainNavigation />
               </el-collapse-item>
             </el-collapse>
@@ -19,16 +22,17 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import MainNavigation from './global/navs/MainNavigation.vue';
-import { text } from 'stream/consumers';
 
+// Define the navigations state
 const navigations = ref({});
+const activePanels = ref([]);
+
 // Use useFetch to load the JSON data from the public folder
 const { data, error } = await useFetch('/_data/menus.json');
 
@@ -41,59 +45,70 @@ if (data.value) {
 </script>
 
 <style scoped>
-/* Basis Styling voor de tekstcontainer */
+/* The existing styles for your component remain unchanged */
 .opacity-80 {
   opacity: 0.8;
 }
 
-/* Verwijder de achtergrondkleur, padding/margin van de dropdown en nav-items */
+::v-deep(.el-collapse-item__content) {
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  padding-left: 8px;
+}
+
+::v-deep(.el-collapse-item__wrap) {
+  background-color: transparent !important;
+  border: none !important;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
 .custom-collapse {
-  background-color: transparent !important; /* Verwijder de achtergrondkleur van de collapse */
-  box-shadow: none !important; /* Verwijder schaduwen van de collapse */
+  background-color: transparent !important;
+  box-shadow: none !important;
   border: #020027;
 }
 
 .custom-collapse-item {
-  background-color: transparent !important;  /* Verwijder de achtergrondkleur van de collapse items */
-  border: none !important;                   /* Verwijder de rand */
-  margin: 0 !important;                      /* Verwijder marges */
-  padding: 0 !important;                     /* Verwijder padding */
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Zorg ervoor dat de titel van de dropdown naar crimson rood gaat */
-.el-collapse-item__header {
-  color: crimson !important;  /* Verander de kleur van de titel naar crimson */
-  
+::v-deep(.el-collapse-item__header) {
+  color: crimson !important;
+  font-size: medium;
+  font-weight: 600;
+  margin-left: 14px;
+  margin-right: 10px;
 }
 
-/* Als je specifieke items zoals "Datavisualisatie" wilt stylen, voeg je de class toe */
 .works-nav .datavisualisatie-title {
-  color: crimson !important;  /* Verander de kleur naar crimson voor Datavisualisatie titel */
+  color: crimson !important;
 }
 
 .el-collapse {
-  background-color: transparent !important;  /* Zorg ervoor dat de collapse-container geen achtergrond heeft */
-  box-shadow: none !important;  /* Verwijder de schaduw van de collapse */
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
-/* Styling voor de dropdown-links om marges en randen te verwijderen */
 .home-button {
-  border: none; /* Verwijder de rand rondom de buttons */
-  color: crimson; /* Zorg ervoor dat de kleur van de links goed overgenomen wordt */
-  padding: 8px 16px;  /* Voeg wat padding toe als dat nodig is */
-  text-decoration: none; /* Verwijder onderlijning */
-  display: inline-block; /* Zorg ervoor dat de links goed in lijn blijven */
-  margin: 0; /* Verwijder marges van de links */
+  border: none;
+  color: crimson;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0;
 }
 
-/* Styling voor hover-effecten op de links */
 .home-button:hover {
-  background-color: #020027;  /* Toevoegen van een lichte achtergrondkleur op hover */
-  color: crimson;  /* Verander de kleur van de tekst */
-  
+  background-color: #020027;
+  color: crimson;
 }
 
-/* Aanpassingen voor de fade-in animaties */
 .animate-fade {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -106,7 +121,6 @@ if (data.value) {
   animation-delay: 150ms;
 }
 
-/* Animatie definitie */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -116,14 +130,13 @@ if (data.value) {
   }
 }
 
-/* Responsieve aanpassingen (indien nodig) */
 @media (max-width: 768px) {
   .home-button {
-    padding: 6px 12px; /* Kleinere padding voor mobiele weergave */
+    padding: 6px 12px;
   }
 
   .custom-collapse-item {
-    padding: 0 !important; /* Zorg ervoor dat de dropdown geen extra padding heeft */
+    padding: 0 !important;
   }
 }
 </style>
