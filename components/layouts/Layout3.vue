@@ -38,7 +38,7 @@
 
       <!-- Main section -->
       <div class="mx-auto p-4 animate-fade animate-once animate-delay-[500ms]" v-if="imageLoaded">
-        <div class="italic-text container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class=" container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <!-- First column -->
           <div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 mijn-tekst">{{ data.title }}</h1>
