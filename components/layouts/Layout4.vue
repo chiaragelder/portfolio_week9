@@ -1,4 +1,3 @@
-
 <template>
   <div class="layout4">
     <ClientOnly>
@@ -50,22 +49,36 @@
           <h1 v-if="data.subtitle" class="opacity-80 text-xl md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
           
           
-          <div v-if="data.imagegallery && data.imagegallery.showgallery == true">
+          <div v-if="data.imagegallery && data.imagegallery.showgallery == true" class="mt-20">
             <ImageGallery/> 
           </div>
         </div>
 
-        <!-- Second column -->
-        <div>
+        <!-- Second column (Text column) -->
+        <div class="pl-16 mt-96"> <!-- Added margin-top of 16px -->
+          <p class="text-lg md:text-2xl lg:text-xl pb-5 font-bold" style="max-width: 90ch;"> <!-- Increased max-width for longer lines -->
+            {{ data.description }}
+          </p>
           
-          <p class="text-lg md:text-2xl lg:text-xl pb-5 font-bold">{{ data.description }}</p>
           <ContentRenderer :value="data"/>
         </div>
       </div>
+      
 
       <!-- Second row -->
+      <div v-if="data.tags" class="tags-buttons mt-4">
+              <NuxtLink 
+                v-for="(tag, index) in data.tags" 
+                :key="index" 
+                :to="`/tags/${tag}`" 
+                class="tag-button"
+              >
+                {{ tag }}
+              </NuxtLink>
+            </div>
       <div v-if="data.related_page">
         <RelatedPages :relatedPages="data.related_page"/>
+        
       </div>
 
       <!-- Link and published date -->
@@ -113,6 +126,33 @@ defineProps(['data', 'formatDate']);
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
+}
+
+/* Styling for the container to push buttons to the right */
+.tags-buttons {
+  margin-left: 36.3rem;  /* This pushes the whole container to the right */
+  margin-right: 0;    /* Optional: To ensure it's at the far right */
+  margin-top: 5px;
+  margin-bottom: 150px;
+}
+
+
+/* Styling for tag buttons with added large left padding */
+.tag-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+
+  margin-top: 0.5rem;
+  background-color: #3d3b44;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+}
+
+.tag-button:hover {
+  background-color: rgb(173, 18, 49);
 }
 
 @keyframes spin {
