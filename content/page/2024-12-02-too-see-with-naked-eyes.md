@@ -12,7 +12,7 @@ imagegallery:
     - /img/scherm­afbeelding-2024-12-02-om-10.30.41.png
     - /img/scherm­afbeelding-2024-12-02-om-10.31.11.png
     - /img/scherm­afbeelding-2024-12-02-om-10.30.22.png
-thumbnail: /img/scherm­afbeelding-2024-12-02-om-10.30.22.png
+thumbnail: /img/scherm­afbeelding-2025-01-18-om-12.13.14.png
 date: 2024-12-02T09:27:10.424Z
 numbernavigation: 4
 layoutpage: layout4

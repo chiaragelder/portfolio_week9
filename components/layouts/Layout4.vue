@@ -21,17 +21,7 @@
         class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 animate-fade animate-once animate-delay-[500ms]"
         v-if="imageLoaded"
       >
-        <div class="container p-4">
-          <div>
-            <h1 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold">{{ data.title }}</h1>
-            <h1 v-if="data.subtitle" class="text-white opacity-80 pt-3 text-xl md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
-          </div>
-          
-          <div>
-            <p v-if="data.author" class="text-white opacity-80 text-xs font-bold">{{ data.author }}</p>
-            <p class="text-white text-xs opacity-50 hover:opacity-100">Last update: {{ formatDate(data.date) }}</p>
-          </div>
-        </div>
+        
       </div>
     </div>
 
@@ -45,8 +35,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         <!-- First column -->
         <div>
-          <h1 class="text-3xl md:text-3xl lg:text-6xl lg:mb-3 font-bold">{{ data.title }}</h1>
-          <h1 v-if="data.subtitle" class="opacity-80 text-xl md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
+          <h1 class="text-3xl md:text-3xl lg:text-6xl lg:mb-3 font-bold text-crimson ">{{ data.title }}</h1>
+          <h1 v-if="data.subtitle" class="opacity-80 text-xl md:text-2xl lg:text-3xl pb-10">{{ data.subtitle }}</h1>
           
           
           <div v-if="data.imagegallery && data.imagegallery.showgallery == true" class="mt-20">
@@ -82,16 +72,17 @@
       </div>
 
       <!-- Link and published date -->
-      <div class="text-xs leading-3">
-        <hr />
-        <p class="text-xs opacity-50 hover:opacity-100 pb-2">Last update: {{ formatDate(data.date) }}</p>
-        <article v-if="data.tags" class="tags">
-          <li v-for="(item, index) in data.tags" :key="index" class="pt-2 text-xs opacity-50 hover:opacity-100">
-            <NuxtLink :to="`/tags/${item}`">{{ item }}</NuxtLink> <!-- Load NuxtLink -->
-          </li>
-        </article>
-      </div>
+      
     </div>
+
+          <!-- Footer Section -->
+      <div class="text-center mt-8">
+        <hr />
+        <div class="mt-4">
+          <p class="text-lg text-2xl font-semibold text-crimson">Contact Me!</p>
+          <p class="text-sm text-gray-600 text-crimson">chiaragelder@gmail.com</p>
+        </div>
+      </div>
 
     <!-- Loading the ShareButtons component -->
     <ShareButtons/>
@@ -158,5 +149,9 @@ defineProps(['data', 'formatDate']);
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.text-crimson{
+  color: crimson;
 }
 </style>
