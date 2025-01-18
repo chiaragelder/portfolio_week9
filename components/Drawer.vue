@@ -62,8 +62,14 @@
 
 .el-collapse-item__header {
   background-color: #020027;
-  border-bottom: #020027;
+  border-bottom: none;
 }
+
+.el-collapse-item__header{
+  border-color: #020027;
+}
+
+
 
 b{
   color: crimson;

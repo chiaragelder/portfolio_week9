@@ -9,7 +9,7 @@
 
             <!-- Dropdown -->
             <el-collapse v-model="activePanels" accordion class="custom-collapse">
-              <el-collapse-item title="Works" name="1" class="custom-collapse-item works-nav">
+              <el-collapse-item title="Works" name="1" class="custom-collapse-item works-nav" >
                 <MainNavigation />
               </el-collapse-item>
             </el-collapse>
@@ -26,6 +26,7 @@
 <script setup>
 import { ref } from 'vue';
 import MainNavigation from './global/navs/MainNavigation.vue';
+import { text } from 'stream/consumers';
 
 const navigations = ref({});
 // Use useFetch to load the JSON data from the public folder
@@ -49,6 +50,7 @@ if (data.value) {
 .custom-collapse {
   background-color: transparent !important; /* Verwijder de achtergrondkleur van de collapse */
   box-shadow: none !important; /* Verwijder schaduwen van de collapse */
+  border: #020027;
 }
 
 .custom-collapse-item {
