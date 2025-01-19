@@ -106,7 +106,7 @@ if (data.value) {
 }
 
 .home-button:hover {
-  background-color: #ffffff;
+  background-color: #020027;
   color: crimson;
 }
 
