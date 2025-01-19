@@ -164,14 +164,14 @@ body.light-mode .tag-button:hover {
 
 .image-gallery-padding {
   width: 100%;
-  max-height: 500px;
+  max-height: 1000px;
   overflow: hidden;
 }
 
 img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Zorgt ervoor dat de afbeelding zijn aspect ratio behoudt */
+  object-fit: contain; /* Zorgt ervoor dat de afbeelding zijn aspect ratio behoudt */
 }
 
 /* Divider and Last Update */
