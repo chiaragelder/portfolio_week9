@@ -1,22 +1,22 @@
 <template>
   <div class="layout1">
     <ClientOnly>
-      <!-- Drawer -->
+      <!-- Drawer (hamburgermenu) -->
       <div class="pr-5 z-100">
         <Drawer />
       </div>
 
       <!-- Main content -->
-      <div> 
+      <div>
         <!-- Text content container -->
         <div class="text-container flex flex-col lg:flex-row items-start">
           <!-- Titel aan de linkerkant -->
-          <h1 class="text-3xl md:text-3xl lg:text-6xl font-bold text-crimson lg:mb-10 mr-8 max-w-2xl">{{ data.title }}</h1>
+          <h1 class="text-3xl md:text-3xl lg:text-6xl font-bold text-crimson lg:mb-10 mr-8 max-w-2xl">About Me</h1>
           
-          <!-- Tags als knoppen tussen titel en body tekst -->
+          <!-- Tags als knoppen (optioneel, als je tags hebt) -->
           <div class="tags-buttons mb-8">
             <NuxtLink 
-              v-for="(tag, index) in data.tags" 
+              v-for="(tag, index) in tags" 
               :key="index" 
               :to="`/tags/${tag}`" 
               class="tag-button">
@@ -26,27 +26,29 @@
 
           <!-- Rest van de tekst -->
           <div class="text-content">
-            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800 ">{{ data.description }}</p>
-            <ContentRenderer :value="data" />
+            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800">
+              Welcome to my "About Me" page. Here you can learn more about who I am and what I do!
+            </p>
+            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800">
+              I am a passionate developer with experience in building modern web applications using frameworks like Vue.js and Nuxt.js.
+            </p>
           </div>
         </div>
-        
-        <!-- Image gallery -->
-        <div v-if="data.imagegallery && data.imagegallery.showgallery == true" class="pt-16 pb-24 gallery-container">
+
+        <!-- Optional image gallery (if any) -->
+        <div v-if="imageGallery && imageGallery.showgallery" class="pt-16 pb-24 gallery-container">
           <div class="image-gallery-padding">
             <ImageGallery />
           </div>
         </div>
 
-        <!-- Metadata and divider -->
-          
-      </div>
-
-      <div class="text-center mt-40">
-        <hr class="footer-line" />
-        <div class="mt-4">
-          <p class="text-lg text-2xl font-semibold text-crimson">Contact Me!</p>
-          <p class="text-sm text-gray-600 text-crimson">chiaragelder@gmail.com</p>
+        <!-- Metadata and footer -->
+        <div class="text-center mt-40">
+          <hr class="footer-line" />
+          <div class="mt-4">
+            <p class="text-lg text-2xl font-semibold text-crimson">Contact Me!</p>
+            <p class="text-sm text-gray-600 text-crimson">chiaragelder@gmail.com</p>
+          </div>
         </div>
       </div>
 
@@ -54,14 +56,14 @@
       <ShareButtons />
     
       <!-- SEO metadata -->
-      <Title>{{ data.title }}</Title>
-      <Meta name="description" :content="data.description" />
-      <Meta name="tags" :content="data.tags" />
-      <Meta name="keywords" :content="data.tags.join(', ')" />
-      <Meta property="og:title" :content="data.title" />
-      <Meta property="og:description" :content="data.description" />
-      <Meta property="og:image" :content="data.thumbnail" />
-      <Meta property="og:url" :content="data.url" />
+      <Title>About Me</Title>
+      <Meta name="description" content="Learn more about me, a passionate developer." />
+      <Meta name="tags" content="developer, Vue.js, Nuxt.js" />
+      <Meta name="keywords" content="developer, Vue.js, Nuxt.js" />
+      <Meta property="og:title" content="About Me" />
+      <Meta property="og:description" content="Learn more about me, a passionate developer." />
+      <Meta property="og:image" content="/profile-picture.jpg" />
+      <Meta property="og:url" content="/about" />
       <Meta property="og:type" content="article" />
     </ClientOnly>
   </div>
@@ -209,5 +211,5 @@ img {
 </style>
 
 <script setup>
-defineProps(['data', 'formatDate']);
+defineProps(['tags', 'imageGallery']); 
 </script>

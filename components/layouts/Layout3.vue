@@ -71,8 +71,8 @@
       <div class="text-center mt-40">
         <hr />
         <div class="mt-4">
-          <p class="text-lg text-2xl font-semibold text-black">Contact Me!</p>
-          <p class="text-sm text-gray-600 text-black">chiaragelder@gmail.com</p>
+          <p class="text-lg text-2xl font-semibold text-crimson">Contact Me!</p>
+          <p class="text-sm text-gray-600 text-crimson">chiaragelder@gmail.com</p>
         </div>
       </div>
       </div>
@@ -109,6 +109,8 @@ defineProps(['data', 'formatDate']);
   text-decoration: none; /* Remove underline */
   transition: background-color 0.3s;
 }
+
+
 
 .tag-button:hover {
   background-color: rgb(173, 18, 49); /* Darker background on hover */
