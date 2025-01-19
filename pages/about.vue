@@ -43,6 +43,16 @@
                 Besides designing, I love dancing, shopping, making notebooks, and especially eating! My favorite food is sushi, which is why I’d love to visit Japan someday—it’s definitely on my travel bucket list. I also really enjoy traveling with friends, family, or my boyfriend.
               </p>
             </div>
+
+            <!-- Contact Me -->
+            <div class="text-block">
+              <h2 class="text-title">Contact Me</h2>
+              <ul class="text-content">
+                <li>Instagram: Chiara Gelder</li>
+                <li>Instagram: chiara.gelder.design</li>
+                <li>Email: chiaragelder@gmail.com</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -52,15 +62,7 @@
             <ImageGallery />
           </div>
         </div>
-
-        <!-- Metadata and footer -->
-        <div class="text-center mt-40">
-          <hr class="footer-line" />
-          <div class="mt-4">
-            <p class="text-lg text-2xl font-semibold text-crimson">Contact Me!</p>
-            <p class="text-sm text-gray-600 text-crimson">chiaragelder@gmail.com</p>
-          </div>
-        </div>
+        
       </div>
 
       <!-- Share Buttons -->
@@ -85,10 +87,12 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Shifts content to the left */
+  align-items: center; /* Ensures the content is centered */
   justify-content: flex-start;
   min-height: 100vh;
-  padding-left: 450px; /* Increases space to the left */
+  padding-top: 50px;
+  padding-left: 200px; /* Increases space to the left */
+  padding-right: 200px;
   text-align: left; /* Makes sure text is aligned to the left */
 }
 
@@ -98,7 +102,8 @@
   font-weight: bold;
   color: crimson;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 150px;
+  margin-left: -1350px;
 }
 
 /* Container for image and text */
@@ -106,8 +111,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start; /* Aligns everything to the left */
-  align-items: flex-start; /* Aligns content to the top */
+  justify-content: flex-start; /* Ensures image and text are aligned */
+  align-items: flex-start; /* Keeps content aligned at the top */
+  width: 100%;
 }
 
 /* Image styling */
@@ -126,10 +132,13 @@
 
 /* Text section styling */
 .text-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+  grid-template-rows: repeat(2, auto); /* 2 rows layout */
+  gap: 60px;
+  flex: 1; /* Make sure text section takes up remaining space */
+  width: calc(100% - 460px); /* Ensures the width is appropriate to fit next to the image */
+  padding-left: 30px;
 }
 
 .text-block {
@@ -147,9 +156,9 @@
   font-size: 1rem;
   line-height: 1.6;
   color: #ffffff;
-  max-width: 40ch;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-left: 0;
 }
 
 /* Responsiveness for smaller screens */
@@ -165,6 +174,7 @@
   }
 
   .text-section {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
     text-align: left;
     margin-top: 20px;
   }
@@ -194,6 +204,38 @@
   .title {
     font-size: 1.5rem;
   }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-crimson {
+  color: crimson;
+}
+
+.text-gray-600 {
+  color: #4a5568;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 </style>
 
