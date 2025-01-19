@@ -80,6 +80,7 @@ if (data.value) {
 
 ::v-deep(.el-collapse-item__header) {
   color: crimson !important;
+  background-color: inherit;
   font-size: medium;
   font-weight: 600;
   margin-left: 14px;

@@ -8,30 +8,36 @@
 
       <!-- Main content -->
       <div>
-        <!-- Text content container -->
-        <div class="text-container flex flex-col lg:flex-row items-start">
-          <!-- Titel aan de linkerkant -->
-          <h1 class="text-3xl md:text-3xl lg:text-6xl font-bold text-crimson lg:mb-10 mr-8 max-w-2xl">About Me</h1>
-          
-          <!-- Tags als knoppen (optioneel, als je tags hebt) -->
-          <div class="tags-buttons mb-8">
-            <NuxtLink 
-              v-for="(tag, index) in tags" 
-              :key="index" 
-              :to="`/tags/${tag}`" 
-              class="tag-button">
-              {{ tag }}
-            </NuxtLink>
-          </div>
+        <!-- Text content container met drie kolommen -->
+        <div class="text-container">
+          <!-- Titel met uitlijning naar links -->
+          <h1 class="text-3xl md:text-3xl lg:text-4xl font-bold text-crimson mb-10">About Me</h1>
 
-          <!-- Rest van de tekst -->
-          <div class="text-content">
-            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800">
-              Welcome to my "About Me" page. Here you can learn more about who I am and what I do!
-            </p>
-            <p class="text-lg md:text-2xl lg:text-xl pb-10 text-gray-800">
-              I am a passionate developer with experience in building modern web applications using frameworks like Vue.js and Nuxt.js.
-            </p>
+          <!-- Drie kolommen -->
+          <div class="columns-container">
+            <!-- Kolom 1: Chiara Gelder -->
+            <div class="column chiara-gelder">
+              <h2 class="column-title">Chiara Gelder</h2>
+              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
+                I am Chiara Gelder, a passionate graphic designer and aspiring web developer.
+              </p>
+            </div>
+
+            <!-- Kolom 2: Mind Studies -->
+            <div class="column mind-studies">
+              <h2 class="column-title">Mind Studies</h2>
+              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
+                I have a strong interest in cognitive science and psychology, which influences my design philosophy.
+              </p>
+            </div>
+
+            <!-- Kolom 3: Other Facts About Me -->
+            <div class="column other-facts">
+              <h2 class="column-title">Other Facts</h2>
+              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
+                I enjoy photography, traveling, and exploring new cultures. I believe in lifelong learning and self-improvement.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -54,7 +60,7 @@
 
       <!-- Share Buttons -->
       <ShareButtons />
-    
+
       <!-- SEO metadata -->
       <Title>About Me</Title>
       <Meta name="description" content="Learn more about me, a passionate developer." />
@@ -70,61 +76,71 @@
 </template>
 
 <style scoped>
-/* Basis Styling voor de tekstcontainer */
+/* Styling voor de tekstcontainer */
 .text-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px;
-  padding-left: 10%; /* Extra padding links om de tekst meer naar het midden te brengen */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
 }
 
-/* Flexbox voor titel en tekst naast elkaar op grotere schermen */
+/* Titel styling */
 .text-container h1 {
   margin-top: 0;
-  margin-right: 10px;
-  margin-left: 5%; /* Extra ruimte links voor de titel */
   color: crimson;
-  font-size: 3rem; /* Grotere titel */
+  font-size: 2.5rem; /* Kleinere titel voor 'About Me' */
+  text-align: left; /* Zorg ervoor dat de titel links wordt uitgelijnd */
+  margin-left: 5%; /* Zorgt voor consistentie met de bodytekst */
+  margin-bottom: 40px; /* Verhoogt de afstand tussen de titel en de bodytekst */
 }
 
-/* Tags knoppen - deze zijn flexibel en passen zich aan */
-.tags-buttons {
+/* Drie kolommen container */
+.columns-container {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 24px; /* Ruimte tussen tags en body tekst */
-  margin-left: 5%; /* Extra ruimte links voor de tags */
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
 }
 
-.tag-button {
-  background-color: transparent; /* Geen achtergrondkleur */
-  color: rgb(255, 255, 255);
-  border: 2px solid #3d3b44; /* Rand rondom de knoppen */
-  padding: 5px 10px;
-  font-size: 0.875rem;
-  cursor: pointer;
-  border-radius: 4px;
-  text-decoration: none; /* Verwijder onderlijning */
-  transition: background-color 0.3s, color 0.3s;
+/* Kolommen styling */
+.column {
+  flex: 1;
+  min-width: 250px;
+  max-width: 33%;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-.tag-button:hover {
-  background-color: crimson; /* Achtergrond wordt rood bij hover */
-  color: white;
+/* Kolomtitels (kleiner) */
+.column-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: crimson;
+  margin-bottom: 10px;
+   margin-left: 16px ;
 }
 
-/* Rest van de tekst container */
-.text-content {
-  margin-left: 3.7%; /* Extra ruimte links voor de tekst */
-  margin-top: 20px;
-  max-width: 75ch;  /* Limiteert de lengte van de tekst per regel tot ongeveer 75 tekens */
+/* Tekst in de kolommen kleiner maken */
+.column-text {
+  font-size: 1rem; /* Kleinere tekst in de kolommen */
   line-height: 1.6;
-  word-wrap: break-word;  /* Zorgt ervoor dat de tekst goed wordt afgebroken als dat nodig is */
-  width: 100%;
+}
+
+/* Styling voor de tekst binnen elke kolom */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
 }
 
 /* Styling voor de afbeelding en galerij */
@@ -144,72 +160,44 @@
 img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Zorgt ervoor dat de afbeelding zijn aspect ratio behoudt */
+  object-fit: cover;
 }
 
 /* Divider and Last Update */
+.footer-line {
+  border-top: 0.5px #ccc;
+}
+
 .metadata-container {
   margin-top: 20px;
   text-align: left;
 }
 
-.footer-line {
-  border-top: 0.5px  #ccc; /* Dunner dan voorheen */
-}
-
-.last-update {
-  font-size: 0.75rem; /* Kleinere tekst */
-  color: rgba(0, 0, 0, 0.5); /* Grijstint */
-  margin-left: 0; /* Links uitgelijnd */
-  margin-top: 8px;
-}
-
-/* Styling voor beschrijving */
-.text-lg {
-  font-size: 1.125rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
 /* Responsiviteit - Media queries */
 @media (max-width: 768px) {
-  .text-container {
-    padding-left: 5%; /* Minder padding links op kleinere schermen */
+  .columns-container {
+    flex-direction: column; /* Kolommen worden gestapeld op kleinere schermen */
+    gap: 20px;
   }
 
-  .text-container h1,
-  .tags-buttons,
-  .text-content {
-    margin-left: 2%; /* Minder margin links voor kleinere schermen */
+  .column {
+    max-width: 100%;
   }
-}
 
-@media (max-width: 480px) {
   .text-container h1 {
-    font-size: 2rem; /* Kleinere titel op kleine schermen */
+    font-size: 2rem;
   }
 
-  .tag-button {
-    font-size: 0.75rem;
+  .column-title {
+    font-size: 1.25rem; /* Nog kleinere kolomtitels op kleine schermen */
   }
 
-  .text-content {
-    font-size: 1rem;
-  }
-
-  .gallery-container {
-    margin-top: 20px;
-    max-height: 250px;
+  .column-text {
+    font-size: 0.875rem; /* Kleinere tekst in de kolommen op kleinere schermen */
   }
 }
 </style>
 
 <script setup>
-defineProps(['tags', 'imageGallery']); 
+defineProps(['tags', 'imageGallery']);
 </script>
