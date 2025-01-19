@@ -32,7 +32,7 @@
             <div class="text-block">
               <h2 class="text-title">Mind Studies</h2>
               <p class="text-content">
-                My interests mainly lie in the graphic side of design, including book design, creating posters, and making Instagram posts. However, I’m always open to exploring new things!
+                My interests mainly lie in the graphic side of design, including book design, creating posters, and making Instagram posts. However, I’m always open to exploring new things! 
               </p>
             </div>
 
