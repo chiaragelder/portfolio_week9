@@ -132,7 +132,7 @@ defineProps(['data', 'formatDate']);
 .tag-button {
   display: inline-block;
   padding: 0.5rem 1rem;
-
+margin-left: 10px;
   margin-top: 0.5rem;
   background-color: #3d3b44;
   color: white;

@@ -39,7 +39,6 @@
         </div>
 
         <!-- Metadata and divider -->
-          
       </div>
 
       <div class="text-center mt-40">
@@ -68,6 +67,20 @@
 </template>
 
 <style scoped>
+/* Basis styling voor het toevoegen van donkere/lichte modus */
+:root {
+  --text-color-dark: white;
+  --text-color-light: black;
+  --button-border-dark: #3d3b44;
+  --button-border-light: #d3d3d3;
+  --button-background-dark: transparent;
+  --button-background-light: transparent;
+  --button-hover-background-dark: crimson;
+  --button-hover-background-light: crimson;
+  --button-hover-text-dark: white;
+  --button-hover-text-light: white;
+}
+
 /* Basis Styling voor de tekstcontainer */
 .text-container {
   max-width: 1200px;
@@ -95,24 +108,40 @@
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 24px; /* Ruimte tussen tags en body tekst */
-  margin-left: 5%; /* Extra ruimte links voor de tags */
+  margin-left: 6%; /* Extra ruimte links voor de tags */
 }
 
 .tag-button {
-  background-color: transparent; /* Geen achtergrondkleur */
-  color: rgb(0, 0, 0);
-  border: 2px solid #3d3b44; /* Rand rondom de knoppen */
+  background-color: var(--button-background-dark); /* Geen achtergrondkleur voor dark mode */
+  color: var(--text-color-dark); /* Tekstkleur voor dark mode */
+  border: 2px solid var(--button-border-dark); /* Randkleur voor dark mode */
+  border-color: #3d3b44;
   padding: 5px 10px;
   font-size: 0.875rem;
   cursor: pointer;
   border-radius: 4px;
   text-decoration: none; /* Verwijder onderlijning */
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+/* Knoppen hover-effecten */
 .tag-button:hover {
-  background-color: crimson; /* Achtergrond wordt rood bij hover */
-  color: white;
+  background-color: var(--button-hover-background-dark); /* Achtergrondkleur bij hover voor dark mode */
+  color: var(--button-hover-text-dark); /* Tekstkleur bij hover voor dark mode */
+  border-color: var(--button-hover-background-dark); /* Randkleur bij hover voor dark mode */
+}
+
+/* Light Mode stijl */
+body.light-mode .tag-button {
+  background-color: var(--button-background-light); /* Geen achtergrondkleur voor light mode */
+  color: var(--text-color-light); /* Tekstkleur voor light mode */
+  border: 2px solid var(--button-border-light); /* Randkleur voor light mode */
+}
+
+body.light-mode .tag-button:hover {
+  background-color: var(--button-hover-background-light); /* Achtergrondkleur bij hover voor light mode */
+  color: var(--button-hover-text-light); /* Tekstkleur bij hover voor light mode */
+  border-color: var(--button-hover-background-light); /* Randkleur bij hover voor light mode */
 }
 
 /* Rest van de tekst container */
@@ -152,12 +181,12 @@ img {
 }
 
 .footer-line {
-  border-top: 0.5px  #ccc; /* Dunner dan voorheen */
+  border-top: 0.5px  #4b3c3c; /* Dunner dan voorheen */
 }
 
 .last-update {
   font-size: 0.75rem; /* Kleinere tekst */
-  color: rgba(0, 0, 0, 0.5); /* Grijstint */
+  color: rgba(100, 92, 92, 0.5); /* Grijstint */
   margin-left: 0; /* Links uitgelijnd */
   margin-top: 8px;
 }
@@ -210,4 +239,28 @@ img {
 
 <script setup>
 defineProps(['data', 'formatDate']);
+
+// Variabele voor het bijhouden van de modus
+const isLightMode = ref(false);
+
+// Functie voor het wisselen van modus
+function toggleMode() {
+  isLightMode.value = !isLightMode.value;
+  if (isLightMode.value) {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
+  } else {
+    document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
+  }
+}
+
+// Stel de modus in op basis van de systeeminstellingen
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+  document.body.classList.add('light-mode');
+  document.body.classList.remove('dark-mode');
+} else {
+  document.body.classList.add('dark-mode');
+  document.body.classList.remove('light-mode');
+}
 </script>

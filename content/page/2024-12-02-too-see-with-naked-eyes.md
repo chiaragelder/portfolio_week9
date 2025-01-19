@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Too see with naked eyes*
+title: To see with naked eyes*
 tags:
   - manual/painting
   - indesign

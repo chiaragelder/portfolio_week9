@@ -87,13 +87,13 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures the content is centered */
+  align-items: center; /* Zorgt ervoor dat de inhoud gecentreerd is */
   justify-content: flex-start;
   min-height: 100vh;
   padding-top: 50px;
-  padding-left: 200px; /* Increases space to the left */
+  padding-left: 200px;
   padding-right: 200px;
-  text-align: left; /* Makes sure text is aligned to the left */
+  text-align: left;
 }
 
 /* Title styling */
@@ -103,7 +103,8 @@
   color: crimson;
   margin-top: 0;
   margin-bottom: 150px;
-  margin-left: -1350px;
+  text-align: left; /* Zorgt ervoor dat de titel naar links uitgelijnd is */
+  width: 100%;
 }
 
 /* Container for image and text */
@@ -111,8 +112,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start; /* Ensures image and text are aligned */
-  align-items: flex-start; /* Keeps content aligned at the top */
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -133,11 +134,11 @@
 /* Text section styling */
 .text-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
-  grid-template-rows: repeat(2, auto); /* 2 rows layout */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 60px;
-  flex: 1; /* Make sure text section takes up remaining space */
-  width: calc(100% - 460px); /* Ensures the width is appropriate to fit next to the image */
+  flex: 1;
+  width: calc(100% - 460px);
   padding-left: 30px;
 }
 
@@ -155,7 +156,7 @@
 .text-content {
   font-size: 1rem;
   line-height: 1.6;
-  color: #ffffff;
+  color: #5f5e5e;
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin-left: 0;
@@ -165,7 +166,7 @@
 @media (max-width: 1024px) {
   .about-me-container {
     flex-direction: column;
-    align-items: flex-start; /* Ensures everything is aligned to the left */
+    align-items: flex-start;
   }
 
   .profile-image {
@@ -174,7 +175,7 @@
   }
 
   .text-section {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr;
     text-align: left;
     margin-top: 20px;
   }
@@ -206,37 +207,6 @@
   }
 }
 
-.text-center {
-  text-align: center;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-40 {
-  margin-top: 40px;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-}
-
-.text-crimson {
-  color: crimson;
-}
-
-.text-gray-600 {
-  color: #4a5568;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
 </style>
 
 <script setup>
