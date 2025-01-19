@@ -100,7 +100,7 @@
 
 .tag-button {
   background-color: transparent; /* Geen achtergrondkleur */
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border: 2px solid #3d3b44; /* Rand rondom de knoppen */
   padding: 5px 10px;
   font-size: 0.875rem;
