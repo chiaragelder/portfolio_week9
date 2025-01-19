@@ -7,35 +7,40 @@
       </div>
 
       <!-- Main content -->
-      <div>
-        <!-- Text content container met drie kolommen -->
-        <div class="text-container">
-          <!-- Titel met uitlijning naar links -->
-          <h1 class="text-3xl md:text-3xl lg:text-4xl font-bold text-crimson mb-10">About Me</h1>
+      <div class="content-container">
+        <!-- Titel -->
+        <h1 class="title">About Me</h1>
 
-          <!-- Drie kolommen -->
-          <div class="columns-container">
-            <!-- Kolom 1: Chiara Gelder -->
-            <div class="column chiara-gelder">
-              <h2 class="column-title">Chiara Gelder</h2>
-              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
-                I am Chiara Gelder, a passionate graphic designer and aspiring web developer.
+        <!-- Container voor afbeelding en tekst -->
+        <div class="about-me-container">
+          <!-- Afbeelding -->
+          <div class="image-container">
+            <img src="public/img/IMG_7675.jpeg" alt="Chiara Gelder" class="profile-image" />
+          </div>
+
+          <!-- Tekstsectie -->
+          <div class="text-section">
+            <!-- Chiara Gelder -->
+            <div class="text-block">
+              <h2 class="text-title">Chiara Gelder</h2>
+              <p class="text-content">
+                Hi, I am Chiara, a graphic design student at Luca School of Arts. I am 19 years old and currently in my second year of a bachelor’s in Media and Information Design. I’m half Belgian and half Dutch, but I live in Brussels, Belgium.
               </p>
             </div>
 
-            <!-- Kolom 2: Mind Studies -->
-            <div class="column mind-studies">
-              <h2 class="column-title">Mind Studies</h2>
-              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
-                I have a strong interest in cognitive science and psychology, which influences my design philosophy.
+            <!-- Mind Studies -->
+            <div class="text-block">
+              <h2 class="text-title">Mind Studies</h2>
+              <p class="text-content">
+                My interests mainly lie in the graphic side of design, including book design, creating posters, and making Instagram posts. However, I’m always open to exploring new things!
               </p>
             </div>
 
-            <!-- Kolom 3: Other Facts About Me -->
-            <div class="column other-facts">
-              <h2 class="column-title">Other Facts</h2>
-              <p class="column-text text-lg md:text-xl lg:text-lg text-gray-800">
-                I enjoy photography, traveling, and exploring new cultures. I believe in lifelong learning and self-improvement.
+            <!-- Other Facts -->
+            <div class="text-block">
+              <h2 class="text-title">Other Facts</h2>
+              <p class="text-content">
+                Besides designing, I love dancing, shopping, making notebooks, and especially eating! My favorite food is sushi, which is why I’d love to visit Japan someday—it’s definitely on my travel bucket list. I also really enjoy traveling with friends, family, or my boyfriend.
               </p>
             </div>
           </div>
@@ -76,124 +81,118 @@
 </template>
 
 <style scoped>
-/* Styling voor de tekstcontainer */
-.text-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
+/* Main container for shifting content to the left */
+.content-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  align-items: flex-start; /* Shifts content to the left */
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-left: 450px; /* Increases space to the left */
+  text-align: left; /* Makes sure text is aligned to the left */
 }
 
-/* Titel styling */
-.text-container h1 {
-  margin-top: 0;
+/* Title styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
   color: crimson;
-  font-size: 2.5rem; /* Kleinere titel voor 'About Me' */
-  text-align: left; /* Zorg ervoor dat de titel links wordt uitgelijnd */
-  margin-left: 5%; /* Zorgt voor consistentie met de bodytekst */
-  margin-bottom: 40px; /* Verhoogt de afstand tussen de titel en de bodytekst */
+  margin-top: 0;
+  margin-bottom: 40px;
 }
 
-/* Drie kolommen container */
-.columns-container {
+/* Container for image and text */
+.about-me-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 40px;
+  gap: 20px;
+  justify-content: flex-start; /* Aligns everything to the left */
+  align-items: flex-start; /* Aligns content to the top */
 }
 
-/* Kolommen styling */
-.column {
+/* Image styling */
+.image-container {
+  flex: 0 0 auto;
+  margin-top: 20px;
+  margin-right: 60px;
+}
+
+.profile-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Text section styling */
+.text-section {
   flex: 1;
-  min-width: 250px;
-  max-width: 33%;
-  padding: 16px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Kolomtitels (kleiner) */
-.column-title {
+.text-block {
+  margin-bottom: 20px;
+}
+
+.text-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: crimson;
   margin-bottom: 10px;
-   margin-left: 16px ;
 }
 
-/* Tekst in de kolommen kleiner maken */
-.column-text {
-  font-size: 1rem; /* Kleinere tekst in de kolommen */
+.text-content {
+  font-size: 1rem;
   line-height: 1.6;
+  color: #ffffff;
+  max-width: 40ch;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Styling voor de tekst binnen elke kolom */
-.text-lg {
-  font-size: 1.125rem;
+/* Responsiveness for smaller screens */
+@media (max-width: 1024px) {
+  .about-me-container {
+    flex-direction: column;
+    align-items: flex-start; /* Ensures everything is aligned to the left */
+  }
+
+  .profile-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .text-section {
+    text-align: left;
+    margin-top: 20px;
+  }
 }
 
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-/* Styling voor de afbeelding en galerij */
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.image-gallery-padding {
-  width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Divider and Last Update */
-.footer-line {
-  border-top: 0.5px #ccc;
-}
-
-.metadata-container {
-  margin-top: 20px;
-  text-align: left;
-}
-
-/* Responsiviteit - Media queries */
 @media (max-width: 768px) {
-  .columns-container {
-    flex-direction: column; /* Kolommen worden gestapeld op kleinere schermen */
-    gap: 20px;
-  }
-
-  .column {
-    max-width: 100%;
-  }
-
-  .text-container h1 {
+  .title {
     font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 25%;
   }
 
-  .column-title {
-    font-size: 1.25rem; /* Nog kleinere kolomtitels op kleine schermen */
+  .text-title {
+    font-size: 1.25rem;
   }
 
-  .column-text {
-    font-size: 0.875rem; /* Kleinere tekst in de kolommen op kleinere schermen */
+  .text-content {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 75%;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 }
 </style>
