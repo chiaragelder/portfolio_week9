@@ -14,7 +14,7 @@ imagegallery:
 thumbnail: /img/scherm­afbeelding-2024-12-02-om-09.46.27.png
 date: 2024-12-02T08:59:15.474Z
 numbernavigation: 1
-layoutpage: layout3
+layoutpage: layout1
 description: "For this project, we have been assigned a designer along with an
   accompanying quote and biography. I randomly selected Ross Lovegrove. The
   first step involves researching the designer and understanding the provided

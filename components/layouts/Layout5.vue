@@ -30,7 +30,7 @@
           
           <div>
             <p v-if="data.author" class="text-white opacity-80 text-xs font-bold">{{ data.author }}</p>
-            <p class="text-white text-xs opacity-50 hover:opacity-100">Last update: {{ formatDate(data.date) }}</p>
+           
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div>
           <h1 class="text-3xl md:text-3xl lg:text-6xl lg:mb-3 font-bold">{{ data.title }}</h1>
           <h1 v-if="data.subtitle" class="opacity-80 text-xl md:text-2xl lg:text-3xl font-bold pb-10">{{ data.subtitle }}</h1>
-          <p class="text-lg md:text-2xl lg:text-xl pb-5 font-bold">{{ data.description }}</p>
+          <p class="text-lg md:text-2xl lg:text-xl pb-5 font-bold text-pad">{{ data.description }}</p>
           
           <div v-if="data.imagegallery && data.imagegallery.showgallery == true">
             <ImageGallery/> 
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Second column -->
-        <div>
+        <div class="text-padding">
           <ContentRenderer :value="data"/>
         </div>
       </div>
@@ -67,14 +67,8 @@
       </div>
 
       <!-- Link and published date -->
-      <div class="text-xs leading-3">
-        <hr />
-        <p class="text-xs opacity-50 hover:opacity-100 pb-2">Last update: {{ formatDate(data.date) }}</p>
-        <article v-if="data.tags" class="tags">
-          <li v-for="(item, index) in data.tags" :key="index" class="pt-2 text-xs opacity-50 hover:opacity-100">
-            <NuxtLink :to="`/tags/${item}`">{{ item }}</NuxtLink> <!-- Load NuxtLink -->
-          </li>
-        </article>
+      <div class="text-xs leading-3 footer-line">
+        
       </div>
     </div>
 
@@ -113,6 +107,18 @@ defineProps(['data', 'formatDate']);
   animation: spin 1s linear infinite;
 }
 
+.text-pad{
+  margin-top: 50px;
+}
+
+.text-padding{
+  margin-top: 300px;
+  margin-left: 50px;
+}
+
+.footer-line{
+  max-width: 100%;
+}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
