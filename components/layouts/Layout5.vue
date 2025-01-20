@@ -3,7 +3,16 @@
   <div class="layout5">
     <ClientOnly>
     <div class="relative max-h-screen overflow-hidden z-1">
-      
+      <!-- Lazy loading applied to NuxtImg -->
+      <NuxtImg
+        v-if="data.thumbnail"
+        :src="data.thumbnail"
+        class="w-screen opacity-80 bg-cover"
+        :alt="`Thumbnail for ${data.title}`"
+        format="webp"
+        loading="lazy"
+        @load="imageLoaded = true"
+      />
       
       <div v-if="!imageLoaded" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75">
         <div class="spinner"></div>
