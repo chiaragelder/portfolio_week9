@@ -16,6 +16,10 @@ imagegallery:
     - /img/scherm­afbeelding-2024-11-28-om-17.24.25.png
     - /img/scherm­afbeelding-2024-11-28-om-17.24.38.png
     - /img/scherm­afbeelding-2024-12-02-om-10.05.53.png
+    - /img/img_5891-groot.jpeg
+    - /img/img_5895-groot.jpeg
+    - /img/img_5896-groot.jpeg
+    - /img/img_5897-groot.jpeg
   gallerytitle: ""
 thumbnail: /img/scherm­afbeelding-2024-12-02-om-10.06.30.png
 date: 2024-11-17T14:29:57.955Z
