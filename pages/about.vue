@@ -156,7 +156,7 @@
 .text-content {
   font-size: 1rem;
   line-height: 1.6;
-  color: #5f5e5e;
+  color: #aeaeae;
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin-left: 0;

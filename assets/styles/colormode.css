@@ -4,7 +4,7 @@ body {
     color: rgba(255, 45, 45, 0.8);
     }
     .light-mode body {
-    background-color: #e4e4e4;
+    background-color: #ffffff;
     color: #06062f;
     }
     .light-mode .el-drawer {
