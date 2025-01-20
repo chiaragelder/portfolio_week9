@@ -12,6 +12,13 @@ body {
        
         
     }
+    .light-mode .backcolor{
+        background-color: #ffffff;
+    }
+
+    .dark-mode .el-drawer {
+        background-color: #020027;
+      }
     /* */
     .dark-mode body {
     background-color: #060624;
